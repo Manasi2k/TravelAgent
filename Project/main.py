@@ -21,7 +21,6 @@ import operator
 #DATABASE_URL=os.getenv("DATABASE_URL")
 
 #
-import streamlit as stt
 def get_connection():
 
    # DATABASE_URL = os.getenv("DATABASE_URL")
