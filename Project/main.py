@@ -20,7 +20,7 @@ import psycopg
 import operator
 #DATABASE_URL=os.getenv("DATABASE_URL")
 
-DATABASE_URL = st.secrets["postgresql://postgres:PatrickandManasi@db.jfxtiyvyafcfkpninzgc.supabase.co:5432/postgres"]
+DATABASE_URL = st.secrets["DATABASE_URL"]
 
 
 from Tools.Flight_Search import flight_search
