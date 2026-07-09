@@ -20,7 +20,16 @@ import psycopg
 import operator
 #DATABASE_URL=os.getenv("DATABASE_URL")
 
-DATABASE_URL = st.secrets["DATABASE_URL"]
+#DATABASE_URL = st.secrets["DATABASE_URL"]
+
+def get_connection():
+
+    DATABASE_URL = os.getenv("DATABASE_URL")
+
+    return psycopg.connect(
+        DATABASE_URL,
+        autocommit=True
+    )
 
 
 from Tools.Flight_Search import flight_search
@@ -109,7 +118,9 @@ graph.add_edge("Final_Agent",END)
 
 
 
-connectSQL=psycopg.connect(DATABASE_URL,autocommit=True)
+#connectSQL=psycopg.connect(DATABASE_URL,autocommit=True)
+
+connectSQL = get_connection()
 checkpointer=PostgresSaver(connectSQL)
 checkpointer.setup()
 
