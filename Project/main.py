@@ -18,7 +18,10 @@ from langchain_core.messages import HumanMessage,AIMessage,SystemMessage,AnyMess
 from langgraph.checkpoint.postgres import PostgresSaver
 import psycopg
 import operator
-DATABASE_URL=os.getenv("DATABASE_URL")
+#DATABASE_URL=os.getenv("DATABASE_URL")
+
+DATABASE_URL = st.secrets["DATABASE_URL"]
+
 
 from Tools.Flight_Search import flight_search
 from Tools.Tavily_Search import tavily_search
