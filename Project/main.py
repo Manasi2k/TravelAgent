@@ -4,8 +4,12 @@ load_dotenv()
 from langchain.chat_models import init_chat_model
 from langchain_groq import ChatGroq
 
-os.environ["GROQ_API_KEY"]=os.getenv("GROQ_API_KEY")
+#os.environ["GROQ_API_KEY"]=os.getenv("GROQ_API_KEY")
+
+
+import streamlit as st
 model=init_chat_model("groq:llama-3.3-70b-versatile")
+groq_key = st.secrets["GROQ_API_KEY"]
 
 from typing import TypedDict,Annotated
 from typing_extensions import NotRequired
