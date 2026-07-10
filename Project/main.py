@@ -24,7 +24,7 @@ import operator
 def get_connection():
 
    # DATABASE_URL = os.getenv("DATABASE_URL")
-    DATABASE_URL = stt.secrets["DATABASE_URL"]
+    DATABASE_URL = st.secrets["DATABASE_URL"]
     return psycopg.connect(
         DATABASE_URL,
         autocommit=True
